@@ -1,4 +1,13 @@
 function rollDice() {
-  let dice = Math.floor(Math.random() * 6) + 1;
-  document.getElementById("result").innerText = "Roll: " + dice;
+  let result = document.getElementById("result");
+
+  let rollInterval = setInterval(() => {
+    result.innerText = "Rolling... 🎲";
+  }, 50);
+
+  setTimeout(() => {
+    clearInterval(rollInterval);
+    let dice = Math.floor(Math.random() * 6) + 1;
+    result.innerText = "You got: " + dice;
+  }, 800);
 }
